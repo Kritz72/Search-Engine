@@ -1,0 +1,107 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background */
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
+header .logo {
+    width: 50px;
+}
+
+
+
+header nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a i {
+    margin-right: 8px;
+}
+
+header nav a:hover {
+    color: #00c6ff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    height: calc(100vh - 80px); /* Full height minus header */
+    text-align: center;
+}
+
+.container .logo {
+    width: 100px;
+    margin-bottom: 0px;
+}
+
+.container h1 {
+    margin-bottom: 0px;
+    font-size: 48px;
+}
+
+/* Form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form button {
+    padding: 10px 20px;
+    background: #00c6ff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+form button i {
+    margin-right: 8px;
+}
+
+form button:hover {
+    background: #0072ff;
+}

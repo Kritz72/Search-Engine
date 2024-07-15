@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header .logo {
+    width: 100px;
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 2rem;
+    vertical-align: middle;
+}
+
+header nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    
+}
+
+header nav a:hover {
+    color: #d5ef0f;
+}
+
+.container {
+    margin-top: 120px;
+    text-align: center;
+    color: #45A049;
+}
+
+#searchForm {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#query {
+    padding: 10px;
+    font-size: 1rem;
+    width: 500px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#query:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45A049;
+}
+
+button[type="submit"]:active {
+    background-color: #3E8E41;
+}
+.container .logo{
+    height: 100px;
+    width: 80px;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style_home.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        <h1>Otter</h1>
+        <nav>
+            <a href="/ab">Registration</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        <h1>Otter</h1>
+        <form id="searchForm" action="/search" method="GET">
+            <input type="text" id="query" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

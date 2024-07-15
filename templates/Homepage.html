@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style_home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        
+        <nav>
+            <a href="/ab"><i class="fas fa-user-plus"></i> Registration</a>
+            <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        <h1>Otter</h1>
+        <form id="searchForm" action="/search" method="GET">
+            <input type="text" id="query" name="query" placeholder="Search...">
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #ddc7efd7, #f7cef1);
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background: linear-gradient(to right, #3b0f5fd7, #ec6bd9);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header .logo {
+    height: 60px;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+header nav {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #570c72;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 10px auto;
+    padding: 20px;
+    background: linear-gradient(to right, #f1ecf6d7, #f5d5f0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-height: 100vh; /* Maximum height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+h2 {
+    border-bottom: 2px solid #10097b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#results h3 {
+    margin: 10px 0;
+    
+}
+
+#results h3 a {
+    color: #0c1512;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#results h3 a:hover {
+    color: #5b0b37;
+}
+
+#results p {
+    margin: 5px 0 20px 0;
+    color: #5727db;
+    text-align: left;
+}
+#searchForm {
+    display: flex;
+    align-items: center;
+    margin-right:700px ;
+}
+
+#searchForm input[type="text"] {
+    padding: 15px;
+    font-size: 16px;
+    
+}
+
+#searchForm button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#searchForm button:hover {
+    background-color: #0056b3;
+}

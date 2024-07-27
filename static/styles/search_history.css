@@ -1,0 +1,100 @@
+/* styles/search_history.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #9c3dead7, #f7cef1); /* Gradient background */
+
+    color: #333;
+}
+
+header {
+    background: #835dc1;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #f39c12;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 600px;
+}
+
+nav {
+    display: inline-block;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffffcc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #281b63;
+    margin-bottom: 30px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.history-table th, .history-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.history-table th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.history-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.history-table tr:hover {
+    background-color: #ddd;
+}
+
+.query-cell {
+    cursor: pointer;
+    color: #c474da;
+    transition: color 0.3s;
+}
+
+.query-cell:hover {
+    color: #140e05;
+}
+
+p {
+    text-align: center;
+    color: #0d56a0;
+}

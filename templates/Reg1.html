@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HOMEPAGE</h1>
+            <h2>Register Yourself First</h2>
+        </header>
+        <main>
+            <form method="POST" action="/ab">
+                <div class="form-group">
+                    <label for="Username">Username: </label>
+                    <input type="text" name="Username" id="Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email: </label>
+                    <input type="email" name="Email" id="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password: </label>
+                    <input type="password" name="Password" id="Password" required>
+                </div>
+                <div class="register">
+                    <input type="submit" value="Register">
+                </div>
+                
+            </form>
+            <div class="user-info">
+                {% if username %}
+                    <h2>{{ username }}</h2>
+                {% endif %}
+                {% if emailId %}
+                    <h2>{{ emailId }}</h2>
+                {% endif %}
+                {% if pw %}
+                    <h2>{{ pw }}</h2>
+                {% endif %}
+                {% if variable %}
+                    {{ variable }}
+                {% endif %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style_home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-content">
+            
+            {% if username %}
+            <h1 class="pacifico-regular">Welcome {{ username }}</h1>
+            {% else %}
+            <h1 class="pacifico-regular"></h1>
+            {% endif %}
+            <label class="switch" title="Switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <nav>
+            
+            <!-- <a href="/ab" class="pacifico-regular"><i class="fas fa-user-plus"></i> Registration</a>
+            <a href="/login" class="pacifico-regular"><i class="fas fa-sign-in-alt"></i> Login</a> -->
+            {% if username %}
+            <a href="/logout" class="pacifico-regular"><i class="fas fa-sign-in-alt"></i> Logout</a>
+            {% else %}
+            <a href="/ab" class="pacifico-regular"><i class="fas fa-user-plus"></i> Registration</a>
+            <a href="/login" class="pacifico-regular"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+            {% endif %}
+            
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        <h1 class="pacifico-regular">Otter</h1>
+        <form id="searchForm" action="/search" method="GET">
+            <input type="text" id="query" name="query" placeholder="Search...">
+            <button type="submit"><i class="fas fa-search"></i></button></form>
+        </form>
+    </div>
+    <div class="history">
+        {% if username %}
+
+        <a href="/search_history" class="pacifico-regular" title="Search history"> <img src="{{ url_for('static', filename='images/hourglass.jpg') }}" alt="hourglass"></a>
+        
+        
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

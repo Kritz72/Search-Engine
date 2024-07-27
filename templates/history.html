@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/search_history.css') }}">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="{{ url_for('static', filename='images/Otter2.png') }}" alt="Logo" class="logo">
+        </a>
+        <nav>
+            <a href="/ab"><i class="fas fa-user-plus"></i> Registration</a>
+            <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            {% if username %}
+                <a href="/logout"><i class="fas fa-sign-in-alt"></i>Logout</a>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Search History</h1>
+        {% if search_history %}
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Query</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for query, timestamp in search_history %}
+                        <tr>
+                            <td class="query-cell">{{ query }}</td>
+                            <td>{{ timestamp }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No search history found.</p>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='scripts/search_history.js') }}"></script>
+</body>
+</html>

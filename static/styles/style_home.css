@@ -1,107 +1,254 @@
-/* General Reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
+body.light-mode {
+    background: linear-gradient(to right, #c49ce5d7, #f3eff2); /* Gradient background */
+
+    color: #000000;
+    margin: 0px;
+    font-family: Arial, sans-serif;
 }
 
-/* Background */
-body {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
-    color: white;
+body.dark-mode {
+    /* background-color: #1f1919; */
+    background: linear-gradient(to right,  #0b0b0b, #746e6e); /* Gradient background */
+    margin:0px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-bottom: 20px;
-}
-
-header .logo {
-    width: 50px;
-}
-
-
-
-header nav a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-header nav a i {
-    margin-right: 8px;
-}
-
-header nav a:hover {
-    color: #00c6ff;
-}
-
-/* Container */
-.container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    align-items: center;
-    height: calc(100vh - 80px); /* Full height minus header */
+    background: linear-gradient(to right, #460587d7, #ec6bd9);
+    padding: 20px 30px;
     text-align: center;
+    
+    position: relative;
+    
+    
+}
+
+body.dark-mode header {
+    background: linear-gradient(to right, #303031d7, #767475);
+}
+
+.header-content {
+    display: inline-block;
+    align-items: center;  
+    position: relative;  
+   
+
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-right: 700px;
+    font-size: 20px;
+    position: static;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    margin: 4px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    padding-right: 20px;
+    
+}
+
+nav a:hover {
+    color: #f3ecec;
+    transform: scale(1.5);
+
+}
+
+body.dark-mode nav a:hover {
+    color: #bbbbbb;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+
 }
 
 .container .logo {
-    width: 100px;
-    margin-bottom: 0px;
+    width: 50%;
+    max-width: 150px;
 }
 
 .container h1 {
-    margin-bottom: 0px;
-    font-size: 48px;
+    margin: 20px 0;
+   /* transition: background-color 0.5s ease, transform 0.5s ease;*/
+    
+}
+.container h1:hover{
+    /*transform: scale(1.5);*/
+    position: static;
+}
+#searchForm {
+    display: inline;
+    margin-top: 20px;
+    border-radius: 20px ;
 }
 
-/* Form */
-form {
+#query {
+    padding: 14px;
+    width: calc(100% - 50px);
+    max-width: 300px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 40px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    
+}
+
+body.dark-mode #query {
+    border: 1px solid #444444;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+button {
+    padding: 10px;
+    background-color: #b98edbd7;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    border-radius: 30px;
+    width: 40px;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+button:hover {
+    background-color: #8c2bb5;
+    color: aliceblue;
+    transform: scale(1.5);
+}
+
+body.dark-mode button {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-mode button:hover {
+    background-color: #555555;
+}
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 550px;
+    margin-top: 18px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #959090;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(36, 35, 38);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #eef2f4;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .switch {
+        margin-left: 0;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    #query {
+        width: calc(100% - 20px);
+    }
+}
+.history{
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    font-size: 20px;
+    margin-top: 40px;
+    
 }
 
-form input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    width: 300px;
-    transition: all 0.3s ease;
+
+
+
+.history a{
+    text-decoration: none ;
+    color:black;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+.history img{
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+}
+.history a:hover{
+    background-color: #89858a;
+    border-radius: 580px;
+    
+    transform: scale(1.5);
 }
 
-form input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-form button {
-    padding: 10px 20px;
-    background: #00c6ff;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-form button i {
-    margin-right: 8px;
-}
-
-form button:hover {
-    background: #0072ff;
+body.dark-mode .history a:hover{
+   border-radius: #f3c8c8;
+   
+    
 }

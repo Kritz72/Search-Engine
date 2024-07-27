@@ -57,7 +57,7 @@
             transition: background 0.3s;
         }
         input[type="submit"]:hover {
-            background: #4cae4c;
+            background: #7512b7;
         }
         .form-group i {
             margin-right: 10px;

@@ -12,7 +12,7 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    background: linear-gradient(to right, #9c3dead7, #f7cef1); /* Gradient background */
 }
 
 /* Navigation */
@@ -45,7 +45,6 @@ form {
 form .logo {
     width: 100px;
     margin-bottom: 20px;
-    
 }
 .logo:hover {
     transform: scale(1.1);
@@ -77,7 +76,7 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #db6d19;
+    border-color: #070706;
     outline: none;
 }
 
@@ -85,7 +84,7 @@ input[type="password"]:focus {
 button {
     width: 100%;
     padding: 10px;
-    background: #ff7e5f;
+    background: #962bedd7;
     border: none;
     border-radius: 45px;
     color: white;
@@ -95,5 +94,13 @@ button {
 }
 
 button:hover {
-    background: #feb47b;
+    background: #8927b363;
+    color: #030101;
+}
+
+/* Pacifico Regular */
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
 }

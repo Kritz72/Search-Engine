@@ -136,8 +136,9 @@ def search():
         conn.commit()
         conn.close()
         username=session['username']
+        return render_template('search_page.html', results=results, username=username)
     
-    return render_template('search_page.html', results=results, username=username)
+    return render_template('search_page.html', results=results)
 
 @app.route('/search_history')
 def search_history():
@@ -156,4 +157,4 @@ def search_history():
 # Run the Flask app
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port,debug=True)

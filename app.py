@@ -4,6 +4,7 @@ import sqlite3
 import requests
 from datetime import datetime
 import os
+
 # Connect to the SQLite database and create tables if they do not exist
 def init_db():
     conn = sqlite3.connect('database.db')
